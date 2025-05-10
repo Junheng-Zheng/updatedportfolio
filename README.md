@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Updated Portfolio
+
+This is a modern portfolio website built with Next.js and Tailwind CSS.
 
 ## Getting Started
 
@@ -10,22 +12,34 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Setting Up API Key for Junbot
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The Junbot component uses the Groq AI API to generate responses. To set up your API key:
+
+1. Create a `.env.local` file in the root directory of the project
+2. Add your Groq API key to the file:
+   ```
+   NEXT_PUBLIC_GROQ_API_KEY=your_groq_api_key_here
+   ```
+3. Restart the development server
+
+Alternatively, you can enter your API key directly in the Junbot interface when it appears.
+
+### Getting a Groq API Key
+
+1. Sign up for an account at [groq.com](https://groq.com)
+2. Navigate to the API section to create an API key
+3. Copy the API key and add it to your `.env.local` file as shown above
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - learn about Tailwind CSS styling.
+- [Groq API Documentation](https://console.groq.com/docs/quickstart) - learn about Groq's API.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 

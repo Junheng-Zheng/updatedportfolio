@@ -3,12 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-inter: "Inter";
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -18,9 +19,364 @@
     --foreground: #ededed;
   }
 }
-
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
 body {
-  background: var(--background);
+  background: black;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+}
+
+.overflowhidden {
+  overflow: hidden;
+}
+.gradientbackground {
+  background: radial-gradient(at top left, #9801ff, #dca6ff, #ffffff);
+  background: radial-gradient(at top left, black, gray);
+}
+
+.animatetext {
+  animation: lefttext-animation 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes lefttext-animation {
+  0% {
+    /* transform: translateX(300%); */
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    /* transform: translateX(0); */
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate {
+  animation: text-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes text-animation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.animatecircle {
+  animation: circle-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.4s;
+  transform: scale(0);
+}
+
+@keyframes circle-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.animatebackground {
+  animation: background-animation 0.01s cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes background-animation {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: rgb(157, 255, 0);
+  }
+}
+
+.animatecenter {
+  animation: center-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes center-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.animatetopleft {
+  animation: topleft-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes topleft-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(30, -30);
+  }
+}
+
+.animatetopright {
+  animation: topright-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes topright-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(-30, -30);
+  }
+}
+
+.animatetopcenter {
+  animation: topcenter-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes topcenter-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(0, -30);
+  }
+}
+
+.animatebottomleft {
+  animation: bottomleft-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes bottomleft-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(-30, 30);
+  }
+}
+
+.animatebottomright {
+  animation: bottomright-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes bottomright-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(30, 30);
+  }
+}
+
+.animatebottomcenter {
+  animation: bottomcenter-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes bottomcenter-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(0, 30);
+  }
+}
+
+.animatecenterleft {
+  animation: centerleft-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes centerleft-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(-30, 0);
+  }
+}
+
+.animatecenterright {
+  animation: centerright-animation 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  animation-delay: 0.9s;
+  transform: scale(0);
+}
+
+@keyframes centerright-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translate(30, 0);
+  }
+}
+
+.animateshowsquare {
+  opacity: 0;
+  animation: showsquare-animation 0.01s cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  animation-delay: 1.3s;
+}
+
+@keyframes showsquare-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rotateanimation {
+  animation: rotate-animation 0.4s cubic-bezier(0.25, 1.75, 0.5, 1.25) forwards;
+  animation-delay: 1.3s;
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.animatefill {
+  animation: fill-animation 0.3s ease-in forwards;
+  animation-delay: 1.7s;
+  transform-origin: center;
+  transform: scale(0);
+}
+
+@keyframes fill-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(20);
+  }
+}
+
+.animateHello {
+  opacity: 0;
+  animation: hello-animation 0.3s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+@keyframes hello-animation {
+  0% {
+    opacity: 0;
+    display: none;
+    /* transform: translateY(20px); */
+  }
+  100% {
+    opacity: 1;
+    display: flex;
+    /* transform: translateY(0); */
+  }
+}
+
+.blinking {
+  animation: blinking 8s infinite;
+}
+
+@keyframes blinking {
+  0% {
+    transform: scaleY(1) translateX(0);
+  }
+  20% {
+    transform: scaleY(1) translateX(0);
+  }
+  22% {
+    transform: scaleY(0.1) translateX(0);
+  }
+  24% {
+    transform: scaleY(1) translateX(0);
+  }
+  40% {
+    transform: scaleY(1) translateX(-5px);
+  }
+  60% {
+    transform: scaleY(1) translateX(0);
+  }
+  80% {
+    transform: scaleY(1) translateX(5px);
+  }
+  82% {
+    transform: scaleY(0.1) translateX(5px);
+  }
+  84% {
+    transform: scaleY(1) translateX(5px);
+  }
+  95% {
+    transform: scaleY(1) translateX(0);
+  }
+  100% {
+    transform: scaleY(1) translateX(0);
+  }
+}
+
+.topleft {
+  transform: translateX(-15px) translateY(-15px);
+}
+
+.topcenter {
+  transform: translateY(-15px);
+}
+
+.centercenter {
+  transform: translateY(-10px);
+}
+
+.centerleft {
+  transform: translateX(-15px) translateY(-10px);
+}
+
+.bottomleft {
+  transform: translateX(-15px);
+}
+
+.centerright {
+  transform: translateX(15px) translateY(-10px);
+}
+
+.topright {
+  transform: translateX(15px) translateY(-15px);
+}
+
+.bottomcenter {
+  transform: translate(0, 0);
+}
+
+.bottomright {
+  transform: translateX(15px);
 }
