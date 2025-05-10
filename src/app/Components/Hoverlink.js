@@ -10,7 +10,7 @@ const Hoverlink = ({ children, delay, href, onClick }) => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: delay }}
-        className="cursor-pointer overflow-hidden relative text-[16px] sm:text-[21px] pb-0.5 leading-none font-semibold"
+        className="cursor-pointer overflow-hidden relative text-[18px] sm:text-[21px] pb-0.5 leading-none font-semibold"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

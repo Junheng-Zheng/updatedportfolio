@@ -44,7 +44,7 @@ export default function Projects() {
       <div className="gradientbackground cursor-crosshair overflow-hidden h-screen w-screen flex justify-center items-center"></div>
       <div className="absolute top-1/2 left-1/2 z-10 sm:w-fit w-full px-10 flex flex-col items-start gap-4 sm:gap-[17px] -translate-x-1/2 -translate-y-1/2">
         <Link href="/../">
-          <p className="text-white cursor-pointer text-[14px] sm:text-[18px] pb-2 border-b-2 border-white leading-none font-semibold">
+          <p className="text-white cursor-pointer text-[16px] sm:text-[18px] pb-2 border-b-2 border-white leading-none font-semibold">
             {"<- Back"}
           </p>
         </Link>
