@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   if (!isReady) {
-    return null;
+    return <div className="h-[100dvh] w-[100dvw] bg-black"></div>;
   }
   return (
     <div className="h-[100dvh] w-[100dvw] relative overflow-hidden">
