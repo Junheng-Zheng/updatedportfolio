@@ -30,11 +30,9 @@ body {
   background: black;
   color: var(--foreground);
   font-family: var(--font-inter);
-}
-
-.overflowhidden {
   overflow: hidden;
 }
+
 .gradientbackground {
   background: radial-gradient(at top left, #9801ff, #dca6ff, #ffffff);
   background: radial-gradient(at top left, black, gray);
