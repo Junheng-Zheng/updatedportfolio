@@ -36,7 +36,7 @@ const Navbar = ({ className, activeButton }) => {
 
   return (
     <div
-      className={`${className} z-5000 absolute z-200 top-0 sm:p-5 py-5 px-10 w-full`}
+      className={`${className} z-5000 absolute top-0 sm:p-5 py-5 px-10 w-full`}
     >
       <div className="w-full flex justify-between items-center">
         {/* <div className="w-full hidden sm:flex justify-start">
@@ -44,9 +44,9 @@ const Navbar = ({ className, activeButton }) => {
             J
           </button>
         </div> */}
-        <div className="w-full  sm:px-0 flex justify-center">
+        <div className="w-full items-center sm:px-0 flex justify-center">
           {/* bg-[rgba(31,31,31,0.11)] */}
-          <div className="shadow-lg border-b border-l border-white/10 justify-center shadow-gray-900/10 sm:w-fit gap-1 sm:gap-5 py-4 sm:py-5 sm:px-8 px-4 rounded-full bg-black/10 items-center flex">
+          <div className="shadow-lg border-b border-l border-white/10 justify-center shadow-gray-900/10 sm:w-fit gap-1 sm:gap-5 py-4 sm:py-5 sm:px-8 px-6 rounded-full bg-black/10 items-center flex">
             <Link href={"/"}>
               <button
                 className={`p-2.5 px-3 transition-all duration-100 rounded-full  ${
@@ -71,7 +71,7 @@ const Navbar = ({ className, activeButton }) => {
             </Link>
             <Link href={"#projects"}>
               <button
-                className={`p-2.5 transition-all duration-100 rounded-full  ${
+                className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
                   activeButton === "projects"
                     ? "bg-black text-white"
                     : "hover:bg-black/10 text-white/80"
@@ -91,6 +91,15 @@ const Navbar = ({ className, activeButton }) => {
                 Experience
               </button>
             </Link>
+            <button
+              className={`p-2.5 transition-all duration-100 block sm:hidden rounded-full  ${
+                activeButton === "more"
+                  ? "bg-black text-white"
+                  : "hover:bg-black/10 text-white/80"
+              }`}
+            >
+              More
+            </button>
           </div>
         </div>
         {/* <div className="w-full hidden sm:flex justify-end">
