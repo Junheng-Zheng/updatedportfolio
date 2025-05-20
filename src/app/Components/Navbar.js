@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 const Navbar = ({ className, activeButton }) => {
   const [ishover, sethover] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
   const github = ishover ? (
     <Link
       onMouseEnter={() => {
@@ -36,77 +36,103 @@ const Navbar = ({ className, activeButton }) => {
 
   return (
     <div
-      className={`${className} z-5000 absolute top-0 sm:p-5 py-5 px-10 w-full`}
+      className={`${className} sm:p-5 z-5000 transition-all duration-300 absolute top-0 ${
+        !isOpen && "py-5 px-10"
+      } w-full`}
     >
-      <div className="w-full flex justify-between items-center">
+      <div className="w-full flex justify-center items-center relative">
         {/* <div className="w-full hidden sm:flex justify-start">
           <button className="h-[35px] w-[35px] border rounded-full text-white bg-black">
             J
           </button>
         </div> */}
-        <div className="w-full items-center sm:px-0 flex justify-center">
-          {/* bg-[rgba(31,31,31,0.11)] */}
-          <div className="shadow-lg border-b border-l border-white/10 justify-center shadow-gray-900/10 sm:w-fit gap-1 sm:gap-5 py-4 sm:py-5 sm:px-8 px-6 rounded-full bg-black/10 items-center flex">
-            <Link href={"/"}>
-              <button
-                className={`p-2.5 px-3 transition-all duration-100 rounded-full  ${
-                  activeButton === "hello"
-                    ? "bg-black text-white"
-                    : "hover:bg-black/10 text-white/80"
-                }`}
-              >
-                Hello
-              </button>
-            </Link>
-            <Link href={"#about"}>
-              <button
-                className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
-                  activeButton === "about"
-                    ? "bg-black text-white"
-                    : "hover:bg-black/10 text-white/80"
-                }`}
-              >
-                About
-              </button>
-            </Link>
-            <Link href={"#projects"}>
-              <button
-                className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
-                  activeButton === "projects"
-                    ? "bg-black text-white"
-                    : "hover:bg-black/10 text-white/80"
-                }`}
-              >
-                Resume
-              </button>
-            </Link>
-            <Link href={"/Experience"}>
-              <button
-                className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
-                  activeButton === "experience"
-                    ? "bg-black text-white"
-                    : "hover:bg-black/10 text-white/80"
-                }`}
-              >
-                Experience
-              </button>
-            </Link>
+        {/* bg-[rgba(31,31,31,0.11)] */}
+        <div
+          className={`flex items-center justify-center gap-1 sm:gap-5 sm:w-fit sm:rounded-full py-4 sm:py-5 px-6 sm:px-8 border-b border-l border-white/10 bg-black/10 shadow-lg shadow-gray-900/10 transition-all duration-300 ${
+            isOpen ? "w-[500px]" : " delay-200 w-[200px] rounded-[50px]"
+          }`}
+        >
+          <Link href={"/"}>
             <button
-              className={`p-2.5 transition-all duration-100 block sm:hidden rounded-full  ${
-                activeButton === "more"
+              className={`p-2.5 px-3 transition-all duration-100 rounded-full  ${
+                activeButton === "hello"
                   ? "bg-black text-white"
                   : "hover:bg-black/10 text-white/80"
               }`}
             >
-              More
+              Hello
             </button>
-          </div>
+          </Link>
+          <Link href={"#about"}>
+            <button
+              className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
+                activeButton === "about"
+                  ? "bg-black text-white"
+                  : "hover:bg-black/10 text-white/80"
+              }`}
+            >
+              About
+            </button>
+          </Link>
+          <Link href={"#projects"}>
+            <button
+              className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
+                activeButton === "projects"
+                  ? "bg-black text-white"
+                  : "hover:bg-black/10 text-white/80"
+              }`}
+            >
+              Resume
+            </button>
+          </Link>
+          <Link href={"/Experience"}>
+            <button
+              className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
+                activeButton === "experience"
+                  ? "bg-black text-white"
+                  : "hover:bg-black/10 text-white/80"
+              }`}
+            >
+              Experience
+            </button>
+          </Link>
+          <button
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+            className={`p-2.5 transition-all duration-100 block sm:hidden rounded-full  ${
+              isOpen ? "bg-black text-white" : "hover:bg-black/10 text-white/80"
+            }`}
+          >
+            More
+          </button>
         </div>
-        {/* <div className="w-full hidden sm:flex justify-end">
+      </div>
+      {/* <div className="w-full hidden sm:flex justify-end">
           <button className="bg-black py-3 px-5 rounded-full">
             Lets Chat!
           </button>
         </div> */}
+      <div
+        className={`absolute w-full overflow-hidden flex flex-col translate-y-full transition-all duration-300 bg-black/10  bottom-0 left-0 ${
+          isOpen ? "max-h-[200px] delay-200" : "max-h-[0px]"
+        }`}
+      >
+        <Link href={"/"}>
+          <button className=" py-4 w-full text-left border-b border-white/10 px-10 h-full">
+            About
+          </button>
+        </Link>
+        <Link href={"/"}>
+          <button className=" py-4 w-full text-left border-b border-white/10 px-10 h-full">
+            Resume
+          </button>
+        </Link>
+        <Link href={"/"}>
+          <button className=" py-4 w-full text-left border-b border-white/10 px-10 h-full">
+            Experience
+          </button>
+        </Link>
       </div>
     </div>
   );
