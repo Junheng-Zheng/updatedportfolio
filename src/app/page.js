@@ -89,7 +89,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="h-[100dvh] w-[100dvw] gradientbackground overflow-hidden">
       {firstTime && <Load />}
       <motion.div
         initial={firstTime ? { opacity: 0 } : { opacity: 1 }}
@@ -154,6 +154,6 @@ export default function Home() {
           <Lilguy />
         </div>
       </motion.div>
-    </>
+    </div>
   );
 }
