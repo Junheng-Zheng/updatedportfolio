@@ -95,7 +95,9 @@ export default function Home() {
         initial={firstTime ? { opacity: 0 } : { opacity: 1 }}
         animate={{ opacity: 1 }}
         transition={
-          firstTime ? { duration: 0.3, delay: 2 } : { duration: 0.3, delay: 0 }
+          firstTime
+            ? { duration: 0.5, delay: 2.1 }
+            : { duration: 0.3, delay: 0 }
         }
         className="h-[100dvh] w-[100dvw] overflow-hidden"
       >
