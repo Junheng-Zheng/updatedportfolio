@@ -15,8 +15,9 @@ export default function Home() {
   const [isReady, setIsReady] = useState(null);
 
   useEffect(() => {
-    const played = sessionStorage.getItem("pagePlayed") === "true";
-    setIsReady(played);
+    if (sessionStorage.getItem("pagePlayed") === "true") {
+      setIsReady(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -43,9 +44,9 @@ export default function Home() {
     return null;
   }
   return (
-    <div className="h-[100vh] w-[100vw] relative overflow-hidden">
+    <div className="h-[100dvh] w-[100dvw] relative overflow-hidden">
       <div className="w-full h-full flex justify-center items-center">
-        {!hasPlayed && <Load pageLoaded={pageLoaded} />}
+        {!hasPlayed && isReady && <Load pageLoaded={pageLoaded} />}
         <Navbar
           className={`${!hasPlayed && pageLoaded && "animateHello"} `}
           activeButton={"hello"}
@@ -72,7 +73,7 @@ export default function Home() {
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: 0.2 }}
-            className="text-[21px] leading-none font-semibold"
+            className="text-[18px] sm:text-[21px] leading-none font-semibold"
           >
             <span className="hidden sm:inline">
               UI/UX Designer & Frontend Developer
