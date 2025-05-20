@@ -84,7 +84,7 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <div className="h-[100dvh] w-[100dvw] gradientbackground overflow-hidden"></div>
+      <div className="h-[100dvh] w-[100dvw] bg-red-500 overflow-hidden"></div>
     );
   }
 
