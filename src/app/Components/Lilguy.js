@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+
 const Lilguy = ({ className }) => {
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   const [currPos, setCurrPos] = useState("none");
@@ -54,10 +54,7 @@ const Lilguy = ({ className }) => {
   }, [coordinates]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3, delay: 0.3 }}
+    <div
       className={`w-fit h-fit translate-y-1/3 absolute flex flex-col bottom-0 justify-center items-center ${className}`}
     >
       <div className="w-[150px] bg-white relative translate-y-[25px] sm:translate-y-[20px] bg-[157, 255, 0] h-[150px] facegradient rounded-full">
@@ -77,7 +74,7 @@ const Lilguy = ({ className }) => {
         </div>
       </div>
       <div className="w-[200px] h-[150px] sm:h-[250px] sm:w-[250px] rounded-full bg-white" />
-    </motion.div>
+    </div>
   );
 };
 
