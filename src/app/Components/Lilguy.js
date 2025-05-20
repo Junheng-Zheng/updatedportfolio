@@ -55,25 +55,25 @@ const Lilguy = ({ className }) => {
 
   return (
     <div
-      className={`w-fit h-fit translate-y-1/3 absolute flex flex-col bottom-0 justify-center items-center ${className}`}
+      className={`w-fit h-fit translate-y-1/3 opacity-25 absolute flex flex-col bottom-0 justify-center items-center ${className}`}
     >
-      <div className="w-[150px] bg-white relative translate-y-[25px] sm:translate-y-[20px] bg-[157, 255, 0] h-[150px] facegradient rounded-full">
+      <div className="w-[150px] border-t-2 backdrop-blur-lg border-l border-white z-2000 relative translate-y-[25px] sm:translate-y-[20px] bg-black  h-[150px] facegradient rounded-full">
         <div className="absolute top-0 w-full h-full items-center justify-center gap-4 flex flex-col">
-          <div className={` bg-white blinking flex gap-7`}>
+          <div className={` blinking flex gap-7`}>
             <div
-              className={`relative bg-black transition-all duration-750 purple ${currPos} opacity-80 w-[15px] h-[25px] rounded-full`}
+              className={`relative transition-all duration-750 bg-white ${currPos}  w-[15px] h-[25px] rounded-full`}
             >
               <div className="bg-white w-[5px] h-[5px] rounded-full absolute top-1 left-1" />
             </div>
             <div
-              className={` relative bg-black transition-all duration-750 ${currPos} purple opacity-80 w-[15px] h-[25px] rounded-full`}
+              className={` relative bg-white transition-all duration-750 ${currPos}  w-[15px] h-[25px] rounded-full`}
             >
-              <div className="bg-white w-[5px] h-[5px] rounded-full absolute top-1 left-1" />
+              <div className=" w-[5px] h-[5px] rounded-full absolute top-1 left-1" />
             </div>
           </div>
         </div>
       </div>
-      <div className="w-[200px] h-[150px] sm:h-[250px] sm:w-[250px] rounded-full bg-white" />
+      <div className="w-[200px] h-[150px] bg-black sm:h-[250px] sm:w-[250px] border-r-2 border-white rounded-full backdrop-blur-sm " />
     </div>
   );
 };
