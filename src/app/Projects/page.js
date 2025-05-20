@@ -25,7 +25,7 @@ export default function Projects() {
     },
   ];
   return (
-    <div className="w-full overflow-hidden relative h-full flex justify-center items-center">
+    <div className="w-full overflow-hidden relative h-[100dvh] flex justify-center items-center">
       {/* <motion.div
         initial={{ y: -2000 }}
         animate={{ y: 0 }}
