@@ -76,9 +76,11 @@ export default function Home() {
             className="text-[18px] sm:text-[21px] leading-none font-semibold"
           >
             <span className="hidden sm:inline">
-              UI/UX Designer & Frontend Developer
+              UI/UX Designer & Frontend Developer @ RIT
             </span>
-            <span className="inline sm:hidden">UI/UX & Frontend Developer</span>
+            <span className="inline sm:hidden">
+              UI/UX & Frontend Developer @ RIT
+            </span>
           </motion.p>
 
           <motion.div
