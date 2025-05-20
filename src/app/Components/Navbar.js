@@ -37,7 +37,7 @@ const Navbar = ({ className, activeButton }) => {
   return (
     <div
       className={`${className} sm:p-5 z-5000 transition-all duration-300 absolute top-0 ${
-        !isOpen && "py-5 px-10"
+        !isOpen && "py-5 px-10 delay-200"
       } w-full`}
     >
       <div className="w-full flex justify-center items-center relative">
@@ -48,11 +48,13 @@ const Navbar = ({ className, activeButton }) => {
         </div> */}
         {/* bg-[rgba(31,31,31,0.11)] */}
         <div
-          className={`flex items-center justify-center gap-1 sm:gap-5 sm:w-fit sm:rounded-full py-4 sm:py-5 px-6 sm:px-8 border-b border-l border-white/10 bg-black/10 shadow-lg shadow-gray-900/10 transition-all duration-300 ${
-            isOpen ? "w-[500px]" : " delay-200 w-[200px] rounded-[50px]"
+          className={`flex items-center  sm:gap-5 sm:w-fit sm:rounded-full py-4 sm:py-5 sm:px-8 border-b border-l border-white/10 bg-black/10 shadow-lg shadow-gray-900/10 transition-all duration-300 ${
+            isOpen
+              ? "w-[500px] justify-between px-10 gap-12"
+              : " delay-200 w-[200px]  rounded-[50px] justify-center gap-1  px-6 "
           }`}
         >
-          <Link href={"/"}>
+          <Link href={"/"} className={`transition-all duration-300 `}>
             <button
               className={`p-2.5 px-3 transition-all duration-100 rounded-full  ${
                 activeButton === "hello"
@@ -60,7 +62,7 @@ const Navbar = ({ className, activeButton }) => {
                   : "hover:bg-black/10 text-white/80"
               }`}
             >
-              Hello
+              {isOpen ? "Menu" : "Hello"}
             </button>
           </Link>
           <Link href={"#about"}>
@@ -104,7 +106,7 @@ const Navbar = ({ className, activeButton }) => {
               isOpen ? "bg-black text-white" : "hover:bg-black/10 text-white/80"
             }`}
           >
-            More
+            {isOpen ? "Close" : "More"}
           </button>
         </div>
       </div>
@@ -119,17 +121,17 @@ const Navbar = ({ className, activeButton }) => {
         }`}
       >
         <Link href={"/"}>
-          <button className=" py-4 w-full text-left border-b border-white/10 px-10 h-full">
+          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
             About
           </button>
         </Link>
         <Link href={"/"}>
-          <button className=" py-4 w-full text-left border-b border-white/10 px-10 h-full">
+          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Resume
           </button>
         </Link>
         <Link href={"/"}>
-          <button className=" py-4 w-full text-left border-b border-white/10 px-10 h-full">
+          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Experience
           </button>
         </Link>
