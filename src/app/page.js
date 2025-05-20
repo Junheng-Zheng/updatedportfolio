@@ -84,12 +84,12 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <div className="h-[100dvh] w-[100dvw] gradientbackground overflow-hidden"></div>
+      <div className="h-[100dvh] w-full gradientbackground overflow-hidden"></div>
     );
   }
 
   return (
-    <div className="h-[100dvh] w-[100dvw] gradientbackground overflow-hidden">
+    <div className="h-[100dvh] w-full overflow-hidden">
       {firstTime && <Load />}
       <motion.div
         initial={firstTime ? { opacity: 0 } : { opacity: 1 }}
@@ -99,16 +99,12 @@ export default function Home() {
             ? { duration: 0.5, delay: 2.1 }
             : { duration: 0.3, delay: 0 }
         }
-        className="h-[100dvh] w-[100dvw] overflow-hidden"
+        className="h-[100dvh] absolute top-0 left-0 gradientbackground w-full overflow-hidden"
       >
-        <div className="w-full h-full flex justify-center items-center">
+        <div className="w-full h-full flex justify-center items-center relative">
           <Navbar activeButton={"hello"} />
           <div
-            className={`
-            gradientbackground absolute top-0 left-0 cursor-crosshair overflow-hidden h-screen w-screen flex justify-center items-center`}
-          ></div>
-          <div
-            className={`absolute top-1/2 left-1/2 z-10 sm:w-fit flex flex-col items-start w-full gap-[17px]  p-10 -translate-x-1/2 -translate-y-1/2`}
+            className={`absolute top-1/2 left-1/2 z-10 sm:w-fit flex flex-col items-start w-full gap-[17px] p-10 -translate-x-1/2 -translate-y-1/2`}
           >
             <motion.h1
               initial={{ opacity: 0, x: -100 }}
