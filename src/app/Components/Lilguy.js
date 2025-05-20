@@ -73,7 +73,7 @@ const Lilguy = ({ className }) => {
           </div>
         </div>
       </div>
-      <div className="w-[150px] sm:h-[250px] aspect-square rounded-full bg-white" />
+      <div className="w-[250px] h-[150px] sm:h-[250px] sm:aspect-square rounded-full bg-white" />
     </div>
   );
 };
