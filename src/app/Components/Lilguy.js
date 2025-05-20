@@ -55,9 +55,9 @@ const Lilguy = ({ className }) => {
 
   return (
     <div
-      className={`w-fit h-fit translate-y-1/3 opacity-25 absolute flex flex-col bottom-0 justify-center items-center ${className}`}
+      className={`w-fit h-fit translate-y-1/3 opacity-20 absolute flex flex-col bottom-0 justify-center items-center ${className}`}
     >
-      <div className="w-[150px] border-t-2 backdrop-blur-lg border-l border-white z-2000 relative translate-y-[25px] sm:translate-y-[20px] bg-black  h-[150px] facegradient rounded-full">
+      <div className="w-[150px] border-t-2 backdrop-blur-lg border-white z-2000 relative translate-y-[25px] sm:translate-y-[20px] bg-black  h-[150px] facegradient rounded-full">
         <div className="absolute top-0 w-full h-full items-center justify-center gap-4 flex flex-col">
           <div className={` blinking flex gap-7`}>
             <div
