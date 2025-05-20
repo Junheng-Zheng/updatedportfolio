@@ -12,16 +12,16 @@ import Hoverlink from "../Components/Hoverlink";
 export default function Projects() {
   const projects = [
     {
+      title: "Writely.work (Startup)",
+      href: "https://writeai-five.vercel.app/",
+    },
+    {
       title: "PACK! Mobile Game (Case Study)",
       href: "/pack",
     },
     {
       title: "Uniqlo Redesign (Case Study)",
       href: "/uniqlo",
-    },
-    {
-      title: "American Dream (Software Dev)",
-      href: "/american-dream",
     },
   ];
   return (

@@ -12,7 +12,7 @@ import Hoverlink from "../Components/Hoverlink";
 export default function Projects() {
   const projects = [
     {
-      title: "UX Designer @ Liberty Mutual",
+      title: "UX Developer @ Liberty Mutual",
       href: "/liberty-mutual",
     },
     {

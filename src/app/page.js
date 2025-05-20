@@ -10,18 +10,23 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
   const [pageLoaded, setPageLoaded] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
+  const [isReady, setIsReady] = useState(null);
+
+  useEffect(() => {
+    const played = sessionStorage.getItem("pagePlayed") === "true";
+    setIsReady(played);
+  }, []);
 
   useEffect(() => {
     const handleLoad = () => {
       setTimeout(() => {
         setPageLoaded(true);
+        setIsReady(true);
       }, 100);
     };
 
-    // Check localStorage only after component mounts
     const played = sessionStorage.getItem("pagePlayed") === "true";
     setHasPlayed(played);
 
@@ -34,18 +39,13 @@ export default function Home() {
     }
   }, []);
 
+  if (!isReady) {
+    return null;
+  }
   return (
     <div className="h-[100vh] w-[100vw] relative overflow-hidden">
       <div className="w-full h-full flex justify-center items-center">
         {!hasPlayed && <Load pageLoaded={pageLoaded} />}
-        {/* <Noise
-        patternSize={200}
-        patternScaleX={1.5}
-        patternScaleY={1.5}
-        patternRefreshInterval={2}
-        patternAlpha={15}
-        className="absolute top-0 left-0 w-full h-full"
-      /> */}
         <Navbar
           className={`${!hasPlayed && pageLoaded && "animateHello"} `}
           activeButton={"hello"}
@@ -72,10 +72,14 @@ export default function Home() {
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: 0.2 }}
-            className=" text-[16px] sm:text-[21px]  sm:text-wrap leading-none font-semibold"
+            className="text-[21px] leading-none font-semibold"
           >
-            Product Designer & Software Developer.
+            <span className="hidden sm:inline">
+              UI/UX Designer & Frontend Developer
+            </span>
+            <span className="inline sm:hidden">UI/UX & Frontend Developer</span>
           </motion.p>
+
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
