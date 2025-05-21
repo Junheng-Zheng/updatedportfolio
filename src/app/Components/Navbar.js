@@ -3,36 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = ({ className, activeButton }) => {
-  const [ishover, sethover] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const github = ishover ? (
-    <Link
-      onMouseEnter={() => {
-        sethover(true);
-      }}
-      onMouseLeave={() => {
-        sethover(false);
-      }}
-      className="flex items-center gap-2 bg-white text-black px-5 py-3 rounded-full transition-all duration-200"
-      href={""}
-    >
-      <p>Github</p>
-      <i className="animate-git text-[21px] fa-brands fa-github"></i>
-    </Link>
-  ) : (
-    <Link
-      onMouseEnter={() => {
-        sethover(true);
-      }}
-      onMouseLeave={() => {
-        sethover(false);
-      }}
-      className="bg-white text-black px-4 py-3 rounded-full transition-all duration-200"
-      href={""}
-    >
-      Github
-    </Link>
-  );
 
   return (
     <div
@@ -49,12 +20,6 @@ const Navbar = ({ className, activeButton }) => {
         />
       )}
       <div className="w-full flex justify-center items-center relative">
-        {/* <div className="w-full hidden sm:flex justify-start">
-          <button className="h-[35px] w-[35px] border rounded-full text-white bg-black">
-            J
-          </button> 
-        </div> */}
-        {/* bg-[rgba(31,31,31,0.11)] */}
         <div
           className={`flex items-center  sm:gap-5  py-4 sm:py-5  border-b border-l border-white/10 bg-black/10 shadow-lg shadow-gray-900/10 transition-all duration-300 ${
             isOpen
@@ -64,7 +29,7 @@ const Navbar = ({ className, activeButton }) => {
         >
           <Link href={"/"} className={`transition-all duration-300 `}>
             <button
-              className={` transition-all duration-100 rounded-full  ${
+              className={`cursor-pointer transition-all duration-100 rounded-full  ${
                 activeButton === "hello" && !isOpen
                   ? " bg-black text-white"
                   : "hover:bg-black/10 text-white/80"
@@ -73,20 +38,9 @@ const Navbar = ({ className, activeButton }) => {
               {isOpen ? "Menu" : "Hello"}
             </button>
           </Link>
-          {/* <Link href={"#about"}>
-            <button
-              className={`p-2.5 transition-all duration-100 ounded-full  ${
-                activeButton === "about"
-                  ? "bg-black text-white"
-                  : "hover:bg-black/10 text-white/80"
-              } ${isOpen ? "hidden" : "sm:block hidden"}`}
-            >
-              About
-            </button>
-          </Link> */}
           <Link href={"#projects"}>
             <button
-              className={`p-2.5 transition-all duration-100 ounded-full  ${
+              className={`cursor-pointer p-2.5 transition-all duration-100 rounded-full  ${
                 activeButton === "projects"
                   ? "bg-black text-white"
                   : "hover:bg-black/10 text-white/80"
@@ -97,7 +51,7 @@ const Navbar = ({ className, activeButton }) => {
           </Link>
           <Link href={"/Experience"}>
             <button
-              className={`p-2.5 transition-all duration-100 ounded-full  ${
+              className={`cursor-pointer p-2.5 transition-all duration-100 rounded-full  ${
                 activeButton === "experience"
                   ? "bg-black text-white"
                   : "hover:bg-black/10 text-white/80"
@@ -110,7 +64,7 @@ const Navbar = ({ className, activeButton }) => {
             onClick={() => {
               setIsOpen(!isOpen);
             }}
-            className={`p-2.5 transition-all duration-100 block  rounded-full  ${
+            className={`cursor-pointer p-2.5 transition-all duration-100 block  rounded-full  ${
               isOpen
                 ? "bg-black text-[21px] text-white aspect-square h-full flex items-center justify-center"
                 : "hover:bg-black/10 text-white/80"
@@ -120,11 +74,7 @@ const Navbar = ({ className, activeButton }) => {
           </button>
         </div>
       </div>
-      {/* <div className="w-full hidden sm:flex justify-end">
-          <button className="bg-black py-3 px-5 rounded-full">
-            Lets Chat!
-          </button>
-        </div> */}
+
       <div
         className={`absolute w-full overflow-hidden flex flex-col translate-y-full  bg-black/10  bottom-0 left-0 ${
           isOpen
@@ -133,27 +83,27 @@ const Navbar = ({ className, activeButton }) => {
         }`}
       >
         <Link href={"/"}>
-          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
+          <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Hello
           </button>
         </Link>
         <Link href={"/"}>
-          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
+          <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             About
           </button>
         </Link>
         <Link href={"/"}>
-          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
+          <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Resume
           </button>
         </Link>
         <Link href={"/"}>
-          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
+          <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Projects
           </button>
         </Link>
         <Link href={"/"}>
-          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
+          <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Experience
           </button>
         </Link>
