@@ -15,12 +15,12 @@ const Hoverlink = ({ children, delay, href, onClick }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div
-          className={`absolute z-0 top-0 left-0 w-full transition-all duration-300    h-full bg-[rgb(157,255,0)] ${
+          className={`absolute z-0 top-0 left-0 w-full transition-all duration-200    h-full bg-[rgb(157,255,0)] ${
             isHovered ? "translate-x-0" : "-translate-x-[calc(100%+0.5rem)]"
           }`}
         ></div>
         <p
-          className={`relative z-10 transition-all duration-500 ${
+          className={`relative z-10 transition-all duration-300 ${
             isHovered ? "text-black" : "text-white"
           }`}
         >

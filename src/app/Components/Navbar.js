@@ -97,12 +97,12 @@ const Navbar = ({ className, activeButton }) => {
             Resume
           </button>
         </Link>
-        <Link href={"/"}>
+        <Link href={"/Projects"}>
           <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Projects
           </button>
         </Link>
-        <Link href={"/"}>
+        <Link href={"/Experience"}>
           <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Experience
           </button>
