@@ -87,7 +87,7 @@ const Navbar = ({ className, activeButton }) => {
             Hello
           </button>
         </Link>
-        <Link href={"/"}>
+        <Link href={"/About"}>
           <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             About
           </button>
