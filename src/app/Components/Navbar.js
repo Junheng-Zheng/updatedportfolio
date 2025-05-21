@@ -119,9 +119,16 @@ const Navbar = ({ className, activeButton }) => {
         </div> */}
       <div
         className={`absolute w-full overflow-hidden flex flex-col translate-y-full transition-all duration-300 bg-black/10  bottom-0 left-0 ${
-          isOpen ? "max-h-[400px] backdrop-blur-lg  delay-200" : "max-h-[0px]"
+          isOpen
+            ? "max-h-[400px] backdrop-blur-lg border-b-0.5 border-white delay-200"
+            : "max-h-[0px]"
         }`}
       >
+        <Link href={"/"}>
+          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
+            Hello
+          </button>
+        </Link>
         <Link href={"/"}>
           <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
             About
@@ -130,6 +137,11 @@ const Navbar = ({ className, activeButton }) => {
         <Link href={"/"}>
           <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Resume
+          </button>
+        </Link>
+        <Link href={"/"}>
+          <button className=" py-6 w-full text-left border-b border-white/10 px-10 h-full">
+            Projects
           </button>
         </Link>
         <Link href={"/"}>
