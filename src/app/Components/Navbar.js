@@ -36,8 +36,8 @@ const Navbar = ({ className, activeButton }) => {
 
   return (
     <div
-      className={`${className} sm:p-5 z-5000 transition-all duration-300 absolute top-0 ${
-        !isOpen && "py-5 px-10 "
+      className={`${className} z-5000 transition-all duration-300 absolute top-0 ${
+        !isOpen && "py-5 px-10  sm:p-5 "
       } w-full`}
     >
       {isOpen && (
@@ -52,56 +52,56 @@ const Navbar = ({ className, activeButton }) => {
         {/* <div className="w-full hidden sm:flex justify-start">
           <button className="h-[35px] w-[35px] border rounded-full text-white bg-black">
             J
-          </button>
+          </button> 
         </div> */}
         {/* bg-[rgba(31,31,31,0.11)] */}
         <div
-          className={`flex items-center  sm:gap-5 sm:w-fit sm:rounded-full py-4 sm:py-5 sm:px-8 border-b border-l border-white/10 bg-black/10 shadow-lg shadow-gray-900/10 transition-all duration-300 ${
+          className={`flex items-center  sm:gap-5  py-4 sm:py-5  border-b border-l border-white/10 bg-black/10 shadow-lg shadow-gray-900/10 transition-all duration-300 ${
             isOpen
-              ? "w-[500px] justify-between px-10 gap-12"
-              : "  w-[200px]  rounded-[50px] justify-center gap-1  px-6 "
+              ? "w-[500px]  sm:w-full justify-between px-10 gap-12"
+              : "  w-[200px] sm:w-fit rounded-[50px] sm:px-8 justify-center gap-1 px-6 "
           }`}
         >
           <Link href={"/"} className={`transition-all duration-300 `}>
             <button
               className={` transition-all duration-100 rounded-full  ${
                 activeButton === "hello" && !isOpen
-                  ? "p-2.5 px-3 bg-black text-white"
-                  : "hover:bg-black/10 text-white/80 text-[21px]"
-              }`}
+                  ? " bg-black text-white"
+                  : "hover:bg-black/10 text-white/80"
+              } ${isOpen ? "text-[21px]" : "p-2.5 px-3"}`}
             >
               {isOpen ? "Menu" : "Hello"}
             </button>
           </Link>
-          <Link href={"#about"}>
+          {/* <Link href={"#about"}>
             <button
-              className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
+              className={`p-2.5 transition-all duration-100 ounded-full  ${
                 activeButton === "about"
                   ? "bg-black text-white"
                   : "hover:bg-black/10 text-white/80"
-              }`}
+              } ${isOpen ? "hidden" : "sm:block hidden"}`}
             >
               About
             </button>
-          </Link>
+          </Link> */}
           <Link href={"#projects"}>
             <button
-              className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
+              className={`p-2.5 transition-all duration-100 ounded-full  ${
                 activeButton === "projects"
                   ? "bg-black text-white"
                   : "hover:bg-black/10 text-white/80"
-              }`}
+              } ${isOpen ? "hidden" : "sm:block hidden"}`}
             >
               Resume
             </button>
           </Link>
           <Link href={"/Experience"}>
             <button
-              className={`p-2.5 transition-all duration-100 sm:block hidden rounded-full  ${
+              className={`p-2.5 transition-all duration-100 ounded-full  ${
                 activeButton === "experience"
                   ? "bg-black text-white"
                   : "hover:bg-black/10 text-white/80"
-              }`}
+              } ${isOpen ? "hidden" : "sm:block hidden"}`}
             >
               Experience
             </button>
@@ -110,7 +110,7 @@ const Navbar = ({ className, activeButton }) => {
             onClick={() => {
               setIsOpen(!isOpen);
             }}
-            className={`p-2.5 transition-all duration-100 block sm:hidden rounded-full  ${
+            className={`p-2.5 transition-all duration-100 block  rounded-full  ${
               isOpen
                 ? "bg-black text-[21px] text-white aspect-square h-full flex items-center justify-center"
                 : "hover:bg-black/10 text-white/80"
