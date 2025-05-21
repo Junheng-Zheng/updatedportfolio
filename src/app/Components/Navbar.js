@@ -118,8 +118,8 @@ const Navbar = ({ className, activeButton }) => {
           </button>
         </div> */}
       <div
-        className={`absolute backdrop-blur-lg w-full overflow-hidden flex flex-col translate-y-full transition-all duration-300 bg-black/10  bottom-0 left-0 ${
-          isOpen ? "max-h-[400px] delay-200" : "max-h-[0px]"
+        className={`absolute w-full overflow-hidden flex flex-col translate-y-full transition-all duration-300 bg-black/10  bottom-0 left-0 ${
+          isOpen ? "max-h-[400px] backdrop-blur-lg  delay-200" : "max-h-[0px]"
         }`}
       >
         <Link href={"/"}>
