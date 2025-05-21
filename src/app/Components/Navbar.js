@@ -40,12 +40,14 @@ const Navbar = ({ className, activeButton }) => {
         !isOpen && "py-5 px-10 "
       } w-full`}
     >
-      <button
-        className="fixed top-0 left-0 w-full h-[100dvh]"
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
-      />
+      {isOpen && (
+        <button
+          className="fixed top-0 left-0 w-full h-[100dvh]"
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        />
+      )}
       <div className="w-full flex justify-center items-center relative">
         {/* <div className="w-full hidden sm:flex justify-start">
           <button className="h-[35px] w-[35px] border rounded-full text-white bg-black">
