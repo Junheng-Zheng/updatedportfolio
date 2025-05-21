@@ -37,7 +37,7 @@ const Navbar = ({ className, activeButton }) => {
   return (
     <div
       className={`${className} sm:p-5 z-5000 transition-all duration-300 absolute top-0 ${
-        !isOpen && "py-5 px-10 delay-200"
+        !isOpen && "py-5 px-10 "
       } w-full`}
     >
       <div className="w-full flex justify-center items-center relative">
@@ -51,15 +51,15 @@ const Navbar = ({ className, activeButton }) => {
           className={`flex items-center  sm:gap-5 sm:w-fit sm:rounded-full py-4 sm:py-5 sm:px-8 border-b border-l border-white/10 bg-black/10 shadow-lg shadow-gray-900/10 transition-all duration-300 ${
             isOpen
               ? "w-[500px] justify-between px-10 gap-12"
-              : " delay-200 w-[200px]  rounded-[50px] justify-center gap-1  px-6 "
+              : "  w-[200px]  rounded-[50px] justify-center gap-1  px-6 "
           }`}
         >
           <Link href={"/"} className={`transition-all duration-300 `}>
             <button
-              className={`p-2.5 px-3 transition-all duration-100 rounded-full  ${
-                activeButton === "hello"
-                  ? "bg-black text-white"
-                  : "hover:bg-black/10 text-white/80"
+              className={` transition-all duration-100 rounded-full  ${
+                activeButton === "hello" && !isOpen
+                  ? "p-2.5 px-3 bg-black text-white"
+                  : "hover:bg-black/10 text-white/80 text-[21px]"
               }`}
             >
               {isOpen ? "Menu" : "Hello"}
@@ -103,10 +103,12 @@ const Navbar = ({ className, activeButton }) => {
               setIsOpen(!isOpen);
             }}
             className={`p-2.5 transition-all duration-100 block sm:hidden rounded-full  ${
-              isOpen ? "bg-black text-white" : "hover:bg-black/10 text-white/80"
+              isOpen
+                ? "bg-black text-[21px] text-white aspect-square h-full flex items-center justify-center"
+                : "hover:bg-black/10 text-white/80"
             }`}
           >
-            {isOpen ? "Close" : "More"}
+            {isOpen ? <i className="fa-solid fa-xmark"></i> : "More"}
           </button>
         </div>
       </div>
@@ -116,8 +118,8 @@ const Navbar = ({ className, activeButton }) => {
           </button>
         </div> */}
       <div
-        className={`absolute w-full overflow-hidden flex flex-col translate-y-full transition-all duration-300 bg-black/10  bottom-0 left-0 ${
-          isOpen ? "max-h-[200px] delay-200" : "max-h-[0px]"
+        className={`absolute backdrop-blur-lg w-full overflow-hidden flex flex-col translate-y-full transition-all duration-300 bg-black/10  bottom-0 left-0 ${
+          isOpen ? "max-h-[400px] delay-200" : "max-h-[0px]"
         }`}
       >
         <Link href={"/"}>
