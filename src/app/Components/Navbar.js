@@ -40,6 +40,12 @@ const Navbar = ({ className, activeButton }) => {
         !isOpen && "py-5 px-10 "
       } w-full`}
     >
+      <button
+        className="fixed top-0 left-0 w-full h-[100dvh]"
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+      />
       <div className="w-full flex justify-center items-center relative">
         {/* <div className="w-full hidden sm:flex justify-start">
           <button className="h-[35px] w-[35px] border rounded-full text-white bg-black">
@@ -118,9 +124,9 @@ const Navbar = ({ className, activeButton }) => {
           </button>
         </div> */}
       <div
-        className={`absolute w-full overflow-hidden flex flex-col translate-y-full transition-all duration-300 bg-black/10  bottom-0 left-0 ${
+        className={`absolute w-full overflow-hidden flex flex-col translate-y-full  bg-black/10  bottom-0 left-0 ${
           isOpen
-            ? "max-h-[400px] backdrop-blur-lg border-b-0.5 border-white delay-200"
+            ? "max-h-[400px] backdrop-blur-lg border-b-0.5 border-white transition-all duration-300 delay-200"
             : "max-h-[0px]"
         }`}
       >
