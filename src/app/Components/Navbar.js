@@ -58,8 +58,8 @@ const Navbar = ({ className, activeButton }) => {
         <div
           className={`flex items-center  sm:gap-5  py-4 sm:py-5  border-b border-l border-white/10 bg-black/10 shadow-lg shadow-gray-900/10 transition-all duration-300 ${
             isOpen
-              ? "w-[500px]  sm:w-full justify-between px-10 gap-12"
-              : "  w-[200px] sm:w-fit rounded-[50px] sm:px-8 justify-center gap-1 px-6 "
+              ? "w-[500px]  sm:w-full justify-between px-10 gap-12 sm:gap-100"
+              : "  w-[200px] sm:w-[430px] rounded-[50px] sm:px-8 justify-center gap-1 px-6 "
           }`}
         >
           <Link href={"/"} className={`transition-all duration-300 `}>
