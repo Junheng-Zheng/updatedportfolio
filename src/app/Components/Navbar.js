@@ -38,10 +38,10 @@ const Navbar = ({ className, activeButton }) => {
               {isOpen ? "Menu" : "Hello"}
             </button>
           </Link>
-          <Link href={"#projects"}>
+          <Link href={"/Resume"}>
             <button
               className={`cursor-pointer p-2.5 transition-all duration-100 rounded-full  ${
-                activeButton === "projects"
+                activeButton === "resume"
                   ? "bg-black text-white"
                   : "hover:bg-black/10 text-white/80"
               } ${isOpen ? "hidden" : "sm:block hidden"}`}
@@ -92,11 +92,12 @@ const Navbar = ({ className, activeButton }) => {
             About
           </button>
         </Link>
-        <Link href={"/"}>
+        <Link href={"/Resume"}>
           <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Resume
           </button>
         </Link>
+
         <Link href={"/Projects"}>
           <button className="cursor-pointer hover:bg-black/10 transition-all duration-200 py-6 w-full text-left border-b border-white/10 px-10 h-full">
             Projects

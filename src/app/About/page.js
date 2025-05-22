@@ -67,7 +67,7 @@ export default function About() {
         className="absolute top-0 left-0 w-full h-full"
       /> */}
       <Navbar />
-      <div className="absolute top-1/2 left-1/2 z-10 sm:w-fit  px-10 flex flex-col items-start gap-4 sm:gap-[24px] -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute top-1/2 left-1/2 z-10 sm:w-[800px]  px-10 flex flex-col items-start gap-4 sm:gap-[24px] -translate-x-1/2 -translate-y-1/2">
         <div className="flex w-full items-center justify-between">
           <Link href="/../">
             <span className="text-white cursor-pointer text-[16px] sm:text-[18px] pb-2 border-b-2 border-white leading-none font-semibold">
